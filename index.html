@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffdd2d">
+  <meta name="description" content="Информационная страница о рефинансировании кредитов: до 5 000 000 ₽, до 5 лет, объединение до 6 кредитов.">
+  <title>Рефинансирование кредитов — условия и оформление</title>
+
+  <style>
+    :root{
+      --yellow:#ffdd2d;
+      --yellow-soft:#fff3a8;
+      --black:#25272b;
+      --muted:#6f7379;
+      --bg:#f5f6f7;
+      --white:#fff;
+      --line:#e4e6e8;
+      --radius:28px;
+      --shadow:0 18px 50px rgba(34,35,38,.08);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--white);
+      color:var(--black);
+      font-family:Arial,Helvetica,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    img{display:block;max-width:100%}
+    a{color:inherit}
+    button,a{-webkit-tap-highlight-color:transparent}
+    .wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
+
+    /* TOP BAR */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:30;
+      background:rgba(255,255,255,.93);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+    .topbar__inner{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand{
+      font-size:18px;
+      font-weight:800;
+      letter-spacing:-.4px;
+    }
+    .brand small{
+      display:block;
+      margin-top:3px;
+      font-size:11px;
+      line-height:1.2;
+      font-weight:500;
+      color:var(--muted);
+    }
+    .topnav{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      font-size:14px;
+    }
+    .topnav a{
+      text-decoration:none;
+      color:#50545a;
+    }
+    .topnav a:hover{color:#000}
+    .top-cta{
+      text-decoration:none !important;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:0 18px;
+      border-radius:13px;
+      background:var(--black);
+      color:#fff !important;
+      font-weight:700;
+    }
+
+    /* HERO */
+    .hero{
+      padding:24px 0 0;
+      background:var(--white);
+    }
+    .hero-media{
+      position:relative;
+      overflow:hidden;
+      border-radius:0 0 32px 32px;
+      background:var(--yellow);
+      box-shadow:var(--shadow);
+    }
+    .hero-media picture,
+    .hero-media img{
+      width:100%;
+    }
+    .hero-media img{
+      object-fit:cover;
+      aspect-ratio:16/9;
+    }
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:flex-end;
+      justify-content:flex-end;
+      padding:22px;
+      pointer-events:none;
+    }
+    .hero-overlay__badge{
+      max-width:420px;
+      padding:12px 14px;
+      border-radius:14px;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(8px);
+      font-size:12px;
+      line-height:1.4;
+      color:#5c6065;
+    }
+
+    .legal-strip{
+      padding:28px 0 34px;
+      border-bottom:1px solid var(--line);
+      background:#fff;
+    }
+    .legal-strip__text{
+      max-width:1100px;
+      margin:0 auto;
+      text-align:center;
+      text-transform:uppercase;
+      font-weight:900;
+      letter-spacing:-.5px;
+      font-size:clamp(18px,2.2vw,28px);
+      line-height:1.25;
+      color:#8a8d91;
+    }
+    .legal-strip__text a{
+      text-decoration:underline;
+      text-underline-offset:4px;
+    }
+
+    /* SECTIONS */
+    section.content{
+      padding:96px 0;
+    }
+    .section-kicker{
+      margin:0 0 14px;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:1.1px;
+      text-transform:uppercase;
+      color:#8a8e94;
+    }
+    h1,h2,h3,p{margin-top:0}
+    h2{
+      max-width:900px;
+      margin-bottom:22px;
+      font-size:clamp(38px,5vw,68px);
+      line-height:.98;
+      letter-spacing:-3px;
+    }
+    .lead{
+      max-width:760px;
+      margin-bottom:44px;
+      color:var(--muted);
+      font-size:20px;
+      line-height:1.5;
+    }
+
+    /* STATS */
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:#fff;
+      padding:28px;
+      min-height:220px;
+    }
+    .card__number{
+      font-size:44px;
+      line-height:1;
+      letter-spacing:-2px;
+      font-weight:900;
+    }
+    .card__title{
+      margin-top:18px;
+      font-size:19px;
+      line-height:1.15;
+      font-weight:800;
+    }
+    .card__text{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    /* YELLOW */
+    .yellow{
+      background:var(--yellow);
+    }
+    .yellow .section-kicker{color:rgba(37,39,43,.55)}
+    .yellow .lead{color:rgba(37,39,43,.72)}
+
+    .debt-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+    .debt{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      min-height:110px;
+      padding:22px;
+      border-radius:22px;
+      background:rgba(255,255,255,.78);
+    }
+    .debt__icon{
+      flex:0 0 54px;
+      height:54px;
+      border-radius:17px;
+      display:grid;
+      place-items:center;
+      background:var(--black);
+      color:#fff;
+      font-weight:900;
+      font-size:20px;
+    }
+    .debt__name{
+      font-size:19px;
+      font-weight:800;
+    }
+    .debt__text{
+      margin-top:4px;
+      font-size:13px;
+      line-height:1.45;
+      color:rgba(37,39,43,.66);
+    }
+
+    /* STEPS */
+    .gray{background:var(--bg)}
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .step{
+      min-height:285px;
+      padding:27px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+    }
+    .step__num{
+      color:#979ba0;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.5px;
+    }
+    .step__bubble{
+      width:70px;
+      height:70px;
+      display:grid;
+      place-items:center;
+      margin-top:38px;
+      border-radius:50%;
+      background:var(--yellow);
+      font-size:27px;
+      font-weight:900;
+    }
+    .step__title{
+      margin-top:22px;
+      font-size:20px;
+      font-weight:800;
+      line-height:1.15;
+    }
+    .step__text{
+      margin-top:9px;
+      font-size:14px;
+      line-height:1.5;
+      color:var(--muted);
+    }
+
+    /* CREATIVE */
+    .creative-block{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      align-items:center;
+      padding:28px;
+      border-radius:32px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    .creative-block img{
+      width:100%;
+      border-radius:24px;
+    }
+    .creative-copy{
+      padding:18px 18px 18px 10px;
+    }
+    .creative-copy h3{
+      margin-bottom:16px;
+      font-size:clamp(32px,4vw,52px);
+      line-height:1;
+      letter-spacing:-2px;
+    }
+    .creative-copy p{
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.55;
+    }
+
+    /* CTA */
+    .cta{
+      position:relative;
+      overflow:hidden;
+      border-radius:38px;
+      background:var(--yellow);
+      padding:70px;
+    }
+    .cta:after{
+      content:"₽";
+      position:absolute;
+      right:-40px;
+      bottom:-85px;
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:
+        radial-gradient(circle at 32% 28%,#fff 0,#dbdbdb 22%,#9a9a9a 42%,#fafafa 58%,#797979 78%,#d7d7d7 100%);
+      border:14px ridge #d5d5d5;
+      box-shadow:0 26px 60px rgba(0,0,0,.17);
+      color:rgba(60,60,60,.62);
+      font-size:110px;
+      transform:rotate(15deg);
+    }
+    .cta__inner{position:relative;z-index:2;max-width:760px}
+    .cta h2{margin-bottom:20px}
+    .cta p{
+      max-width:600px;
+      margin-bottom:28px;
+      font-size:20px;
+      line-height:1.5;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:60px;
+      padding:0 28px;
+      border-radius:17px;
+      background:var(--black);
+      color:#fff;
+      text-decoration:none;
+      font-size:18px;
+      font-weight:800;
+      box-shadow:0 12px 28px rgba(0,0,0,.12);
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+
+    /* FAQ */
+    .faq{
+      border-top:1px solid var(--line);
+    }
+    .faq details{border-bottom:1px solid var(--line)}
+    .faq summary{
+      list-style:none;
+      cursor:pointer;
+      position:relative;
+      padding:26px 50px 26px 0;
+      font-size:19px;
+      font-weight:800;
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary:after{
+      content:"+";
+      position:absolute;
+      right:0;
+      top:50%;
+      transform:translateY(-50%);
+      font-size:30px;
+      font-weight:400;
+    }
+    .faq details[open] summary:after{content:"−"}
+    .faq__answer{
+      max-width:820px;
+      padding:0 0 28px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+    }
+
+    /* FOOTER */
+    .warning-final{
+      padding:38px 0;
+      background:#f0f1f2;
+      text-align:center;
+      border-top:1px solid #e0e2e4;
+    }
+    .warning-final strong{
+      display:block;
+      text-transform:uppercase;
+      font-size:clamp(22px,2.6vw,36px);
+      line-height:1.25;
+      color:#767a7f;
+    }
+    .warning-final p{
+      max-width:980px;
+      margin:14px auto 0;
+      color:#767a7f;
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    footer{
+      padding:52px 0;
+      background:#222428;
+      color:#fff;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.4fr 1fr;
+      gap:48px;
+    }
+    .footer-title{
+      font-size:19px;
+      font-weight:800;
+    }
+    .footer-text{
+      max-width:730px;
+      margin-top:12px;
+      color:rgba(255,255,255,.62);
+      font-size:12px;
+      line-height:1.65;
+    }
+    .footer-links{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      font-size:13px;
+    }
+    .footer-links a{
+      color:rgba(255,255,255,.82);
+      text-underline-offset:3px;
+    }
+    .erid{
+      display:none;
+      margin-top:14px;
+      color:rgba(255,255,255,.52);
+      font-size:12px;
+    }
+
+    /* COOKIE NOTE */
+    .cookie-note{
+      display:none;
+      position:fixed;
+      z-index:100;
+      left:18px;
+      right:18px;
+      bottom:18px;
+      max-width:760px;
+      margin:auto;
+      padding:15px 16px;
+      border-radius:18px;
+      background:#222428;
+      color:#fff;
+      box-shadow:0 16px 50px rgba(0,0,0,.24);
+      font-size:12px;
+      line-height:1.45;
+    }
+    .cookie-note button{
+      margin-left:12px;
+      border:0;
+      border-radius:10px;
+      background:var(--yellow);
+      color:var(--black);
+      font-weight:800;
+      padding:9px 12px;
+      cursor:pointer;
+    }
+
+    @media(max-width:980px){
+      .stats,.steps{grid-template-columns:repeat(2,1fr)}
+      .creative-block{grid-template-columns:1fr}
+      .creative-copy{padding:8px 4px}
+      .cta:after{opacity:.65}
+      .topnav a:not(.top-cta){display:none}
+    }
+
+    @media(max-width:700px){
+      .wrap{width:calc(100% - 28px)}
+      .topbar__inner{min-height:64px}
+      .brand{font-size:16px}
+      .brand small{font-size:10px}
+      .top-cta{min-height:38px;padding:0 14px;font-size:13px}
+
+      .hero{padding-top:10px}
+      .hero-media{border-radius:0 0 24px 24px}
+      .hero-media img{
+        aspect-ratio:auto;
+        min-height:0;
+        object-fit:contain;
+      }
+      .hero-overlay{display:none}
+
+      .legal-strip{padding:24px 0 28px}
+      .legal-strip__text{font-size:17px}
+
+      section.content{padding:70px 0}
+      h2{font-size:40px;letter-spacing:-2px}
+      .lead{font-size:17px;margin-bottom:32px}
+
+      .stats,.steps,.debt-grid{grid-template-columns:1fr}
+      .card{min-height:0;padding:24px;border-radius:22px}
+      .card__number{font-size:39px}
+      .step{min-height:0;border-radius:22px}
+      .step__bubble{margin-top:24px}
+
+      .creative-block{padding:16px;border-radius:24px}
+      .creative-block img{border-radius:18px}
+
+      .cta{
+        padding:42px 24px 190px;
+        border-radius:28px;
+      }
+      .cta h2{font-size:40px}
+      .cta p{font-size:17px}
+      .cta:after{
+        width:230px;
+        height:230px;
+        right:-25px;
+        bottom:-70px;
+        font-size:85px;
+      }
+      .btn{width:100%}
+
+      .footer-grid{grid-template-columns:1fr;gap:30px}
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="brand">
+        Рефинансирование кредитов
+        <small>Информационно-рекламная страница</small>
+      </div>
+
+      <nav class="topnav" aria-label="Навигация">
+        <a href="#conditions">Условия</a>
+        <a href="#how">Как оформить</a>
+        <a href="#faq">Вопросы</a>
+        <a class="top-cta js-aff-link" href="#">Перейти к заявке</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" aria-label="Рефинансирование">
+      <div class="wrap">
+        <div class="hero-media">
+          <picture>
+            <source media="(max-width: 700px)" srcset="assets/hero-mobile.jpg">
+            <source media="(max-width: 1100px)" srcset="assets/hero-tablet.jpg">
+            <img src="assets/hero-desktop.png"
+                 alt="Реклама рефинансирования: до 5 000 000 рублей, объединение до 6 кредитов других банков">
+          </picture>
+
+          <div class="hero-overlay">
+            <div class="hero-overlay__badge">
+              Используется предоставленный рекламный креатив. Страница не является официальным сайтом банка.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="legal-strip">
+      <div class="wrap">
+        <p class="legal-strip__text">
+          Оценивайте свои финансовые возможности и риски.
+          Изучите все условия кредита (займа)
+          <a href="https://www.tbank.ru/loans/refinance/calculator/"
+             target="_blank"
+             rel="noopener nofollow">на официальном сайте кредитора</a>.
+        </p>
+      </div>
+    </div>
+
+    <section class="content" id="conditions">
+      <div class="wrap">
+        <p class="section-kicker">Основные условия</p>
+        <h2>Несколько кредитов. Один ежемесячный платеж.</h2>
+        <p class="lead">
+          Рефинансирование позволяет объединить действующие кредитные обязательства
+          в один новый кредит и перейти к единой дате ежемесячного платежа.
+        </p>
+
+        <div class="stats">
+          <article class="card">
+            <div class="card__number">до 5 млн ₽</div>
+            <div class="card__title">Сумма</div>
+            <div class="card__text">
+              Окончательную доступную сумму определяет банк после рассмотрения заявки.
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__number">до 5 лет</div>
+            <div class="card__title">Срок</div>
+            <div class="card__text">
+              Срок рефинансирования определяется индивидуально в рамках условий продукта.
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__number">до 6</div>
+            <div class="card__title">Кредитов</div>
+            <div class="card__text">
+              Можно объединить несколько кредитных обязательств других банков.
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__number">1</div>
+            <div class="card__title">Платеж</div>
+            <div class="card__text">
+              Вместо нескольких отдельных платежей — один ежемесячный платеж.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content yellow">
+      <div class="wrap">
+        <p class="section-kicker">Что можно рефинансировать</p>
+        <h2>Разные кредитные обязательства можно объединить.</h2>
+        <p class="lead">
+          В рамках предложения банк рассматривает разные виды задолженности.
+        </p>
+
+        <div class="debt-grid">
+          <div class="debt">
+            <div class="debt__icon">₽</div>
+            <div>
+              <div class="debt__name">Потребительский кредит</div>
+              <div class="debt__text">Действующий кредит, оформленный в другом банке.</div>
+            </div>
+          </div>
+
+          <div class="debt">
+            <div class="debt__icon">А</div>
+            <div>
+              <div class="debt__name">Автокредит</div>
+              <div class="debt__text">Действующее кредитное обязательство на автомобиль.</div>
+            </div>
+          </div>
+
+          <div class="debt">
+            <div class="debt__icon">К</div>
+            <div>
+              <div class="debt__name">Кредитная карта</div>
+              <div class="debt__text">Задолженность по кредитной карте другого банка.</div>
+            </div>
+          </div>
+
+          <div class="debt">
+            <div class="debt__icon">М</div>
+            <div>
+              <div class="debt__name">Микрозайм</div>
+              <div class="debt__text">Займы, оформленные в микрофинансовых организациях.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content gray" id="how">
+      <div class="wrap">
+        <p class="section-kicker">Как оформить</p>
+        <h2>От перехода к заявке до решения банка.</h2>
+        <p class="lead">
+          Эта страница не собирает паспортные данные. Заявка заполняется на стороне банка.
+        </p>
+
+        <div class="steps">
+          <article class="step">
+            <div class="step__num">ШАГ 01</div>
+            <div class="step__bubble">1</div>
+            <div class="step__title">Перейдите к заявке</div>
+            <div class="step__text">
+              Нажмите кнопку на этой странице и перейдите на страницу оформления продукта.
+            </div>
+          </article>
+
+          <article class="step">
+            <div class="step__num">ШАГ 02</div>
+            <div class="step__bubble">2</div>
+            <div class="step__title">Заполните данные</div>
+            <div class="step__text">
+              Для оформления заявки потребуется паспорт РФ.
+            </div>
+          </article>
+
+          <article class="step">
+            <div class="step__num">ШАГ 03</div>
+            <div class="step__bubble">3</div>
+            <div class="step__title">Получите решение</div>
+            <div class="step__text">
+              Банк рассмотрит заявку и сообщит индивидуальные условия.
+            </div>
+          </article>
+
+          <article class="step">
+            <div class="step__num">ШАГ 04</div>
+            <div class="step__bubble">4</div>
+            <div class="step__title">Согласуйте получение</div>
+            <div class="step__text">
+              При необходимости представитель согласует встречу и доставит карту и документы.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="wrap">
+        <div class="creative-block">
+          <img src="assets/creative-square.jpg"
+               alt="Рекламный креатив рефинансирования">
+          <div class="creative-copy">
+            <p class="section-kicker">О продукте</p>
+            <h3>Без залога и поручителей</h3>
+            <p>
+              По условиям предложения для оформления заявки нужен паспорт РФ.
+              Решение по заявке и все индивидуальные параметры кредита определяет банк.
+            </p>
+            <a class="btn js-aff-link" href="#">Перейти к заявке</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content gray">
+      <div class="wrap">
+        <div class="cta">
+          <div class="cta__inner">
+            <p class="section-kicker">Перейти к оформлению</p>
+            <h2>Объедините кредиты в один.</h2>
+            <p>
+              До 5 000 000 ₽ на срок до 5 лет. Финальные условия определяет банк
+              после рассмотрения заявки.
+            </p>
+            <a class="btn js-aff-link" href="#">Оформить заявку</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="faq">
+      <div class="wrap">
+        <p class="section-kicker">Вопросы и ответы</p>
+        <h2>Частые вопросы</h2>
+
+        <div class="faq">
+          <details>
+            <summary>Что такое рефинансирование?</summary>
+            <div class="faq__answer">
+              Это оформление нового кредита для погашения ранее оформленных кредитных обязательств.
+            </div>
+          </details>
+
+          <details>
+            <summary>Сколько кредитов можно объединить?</summary>
+            <div class="faq__answer">
+              По условиям этого предложения — до шести кредитных обязательств одновременно.
+            </div>
+          </details>
+
+          <details>
+            <summary>Какая максимальная сумма?</summary>
+            <div class="faq__answer">
+              До 5 000 000 ₽. Конкретную доступную сумму банк определяет после рассмотрения заявки.
+            </div>
+          </details>
+
+          <details>
+            <summary>Какая будет процентная ставка?</summary>
+            <div class="faq__answer">
+              Индивидуальная ставка и полная стоимость кредита станут известны после рассмотрения заявки
+              и до заключения кредитного договора.
+            </div>
+          </details>
+
+          <details>
+            <summary>Нужны ли залог и поручители?</summary>
+            <div class="faq__answer">
+              По условиям предложения залог и поручители не требуются.
+            </div>
+          </details>
+
+          <details>
+            <summary>Сайт собирает мои паспортные данные?</summary>
+            <div class="faq__answer">
+              Нет. На этой странице нет кредитной анкеты. После нажатия на кнопку пользователь
+              переходит к заявке на стороне банка.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="warning-final">
+    <div class="wrap">
+      <strong>Оценивайте свои финансовые возможности и риски</strong>
+      <p>
+        Изучите все условия кредита (займа)
+        <a href="https://www.tbank.ru/loans/refinance/calculator/"
+           target="_blank"
+           rel="noopener nofollow">на официальном сайте кредитора</a>.
+        Сумма, срок, процентная ставка, полная стоимость кредита и решение
+        о предоставлении кредита определяются банком индивидуально.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-title">Рефинансирование кредитов</div>
+        <div class="footer-text">
+          Реклама. <span id="advertiser">Рекламодатель указывается после подтверждения партнёрской сетью</span>.
+          АО «ТБанк». Универсальная лицензия Банка России № 2673.
+          Настоящая страница является информационно-рекламной и не является официальным сайтом банка.
+          Решение о выдаче кредита, доступной сумме, сроке, ставке и иных индивидуальных условиях
+          принимает кредитор.
+        </div>
+        <div class="erid" id="eridWrap">erid: <span id="eridValue"></span></div>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://www.tbank.ru/" target="_blank" rel="noopener nofollow">
+          Официальный сайт кредитора
+        </a>
+        <a href="https://www.tbank.ru/loans/refinance/calculator/"
+           target="_blank"
+           rel="noopener nofollow">
+          Условия рефинансирования
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-note" id="cookieNote">
+    Этот сайт не устанавливает собственные аналитические или рекламные cookie в текущей версии.
+    <button type="button" id="cookieClose">Понятно</button>
+  </div>
+
+  <script>
+    /*
+      ============================================================
+      НАСТРОЙКИ САЙТА
+      ЗАМЕНИ ТОЛЬКО ЭТИ 3 ЗНАЧЕНИЯ ПЕРЕД ПУБЛИКАЦИЕЙ
+      ============================================================
+    */
+
+    const CONFIG = {
+      affiliateUrl: "PASTE_AFFILIATE_LINK_HERE",
+      erid: "PASTE_ERID_HERE",
+      advertiser: "PASTE_ADVERTISER_HERE"
+    };
+
+    /*
+      ВАЖНО:
+      1. Не придумывай ERID — возьми его у партнёрской сети / ОРД.
+      2. Рекламодателя укажи ровно так, как требует партнёрская сеть.
+      3. Партнёрскую ссылку вставляй целиком, со всеми параметрами.
+    */
+
+    const links = document.querySelectorAll(".js-aff-link");
+
+    links.forEach(link => {
+      if (
+        CONFIG.affiliateUrl &&
+        CONFIG.affiliateUrl !== "PASTE_AFFILIATE_LINK_HERE"
+      ) {
+        link.href = CONFIG.affiliateUrl;
+        link.target = "_blank";
+        link.rel = "nofollow sponsored noopener";
+      } else {
+        link.addEventListener("click", event => {
+          event.preventDefault();
+          alert("Перед публикацией вставь партнёрскую ссылку в CONFIG.affiliateUrl");
+        });
+      }
+    });
+
+    if (
+      CONFIG.erid &&
+      CONFIG.erid !== "PASTE_ERID_HERE"
+    ) {
+      document.getElementById("eridWrap").style.display = "block";
+      document.getElementById("eridValue").textContent = CONFIG.erid;
+    }
+
+    if (
+      CONFIG.advertiser &&
+      CONFIG.advertiser !== "PASTE_ADVERTISER_HERE"
+    ) {
+      document.getElementById("advertiser").textContent = CONFIG.advertiser;
+    }
+
+    /*
+      В текущей версии не подключены:
+      - Яндекс Метрика
+      - рекламные пиксели
+      - формы сбора телефона/паспорта
+      - автопереходы
+      - ретаргетинг
+
+      Это сделано намеренно под ограничения оффера.
+    */
+  </script>
+</body>
+</html>
